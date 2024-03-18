@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--Natchapone Janjon       CSC300X HW5-2        3/17/2024-->
+<!--In this assignment, a full-stack web application is created to handle display of a random 
+joke upon loading and allowing the user to add new jokes-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jokebook</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Jokebook</h1>
+    </header>
+    <main>
+        <section class="categories">
+            <h2>Categories</h2>
+            <div class="joke-category">
+
+            </div>
+
+        </section>
+
+        <section class="jokes">
+            <h2>Random Joke</h2>
+            <div id="random-joke">
+
+            </div>
+        </section>
+
+        <section class="new-joke">
+            <h2>Add a Joke</h2>
+            <form id="add-joke" class="add-joke">
+                <label for="category">Category:</label>
+                <select id="category">
+                    <option value="funny-joke">Funny Joke</option>
+                    <option value="lame-joke">Lame Joke</option>
+                </select>
+                <label for="joke">Joke:</label>
+                <input type="txt" id="joke" required>
+                <label for="response">Response:</label>
+                <input type="txt" id="response" required>
+                <button type="submit">Add Joke</button>
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>
