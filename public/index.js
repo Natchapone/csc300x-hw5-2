@@ -1,16 +1,11 @@
-// Fetch random joke on page load
-document.addEventListener("DOMContentLoaded", () => {
-    fetchRandomJoke();
-});
-
 function fetchRandomJoke() {
-    fetch("/jokebook/categories") // Fetch available categories
+    fetch('http://localhost:3000/jokebook/categories') // Fetch available categories
         .then(response => response.json())
         .then(categories => {
 
             // Select a random category
             const randomCategory = categories[Math.floor(Math.random() * categories.length)];
-            return fetch(`/jokebook/${randomCategory}`);
+            return fetch(`http://localhost:3000/jokebook/${randomCategory}`); // Corrected URL
         })
 
         .then(response => response.json())

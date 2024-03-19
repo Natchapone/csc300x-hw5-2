@@ -1,7 +1,17 @@
 const express = require('express');
+const cors = require('cors'); // Import cors package
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Middleware for parsing JSON
+app.use(express.json());
+
+// Serve files from public
+app.use(express.static('public'));
+
+app.get('/', function (req, res) {
+    res.send('Main')
+})
 
 let categories = ['funnyJoke', 'lameJoke'];
 let funnyJoke = [
@@ -29,11 +39,15 @@ let lameJoke = [
     }
 ];
 
-//Categories endpoint
+
+// Enable CORS for all routes
+app.use(cors());
+
+
+// Categories endpoint
 app.get('/jokebook/categories', (req, res) => {
     res.json(categories);
 });
-
 
 // Start the server
 app.listen(PORT, () => {
